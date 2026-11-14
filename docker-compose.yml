@@ -1,0 +1,12 @@
+services:
+  smallbiz-demo:
+    build: .
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      SMALLBIZ_DB: /data/demo.sqlite3
+      SMALLBIZ_KEY_FILE: /data/.smallbiz-fernet-key
+    volumes:
+      - smallbiz_demo_data:/data
+volumes:
+  smallbiz_demo_data:
